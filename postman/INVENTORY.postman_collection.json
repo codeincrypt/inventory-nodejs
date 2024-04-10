@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "e8fc5ac1-1ae4-4ff7-afdb-d0dfedefa4ac",
+		"name": "INVENTORY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "10237280"
+	},
+	"item": [
+		{
+			"name": "insertProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Mi Note 9\", \r\n    \"description\":\"Mi Note 9 - RAM 8GB - STORAGE - 256GB\", \r\n    \"price\":24500,\r\n    \"quantity\":7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4010/api/product/insertProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "getProduct",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4010/api/product/getProduct?page=1&limit=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4010",
+					"path": [
+						"api",
+						"product",
+						"getProduct"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Kartik Kumar Swarnkar\", \r\n    \"email\":\"kartikkr555@gmail.com\",\r\n    \"phone\":\"9523510235\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4010/api/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"kartikkr555@gmail.cop\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4010/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIEt1bWFyIFN3YXJua2FyIiwiZW1haWwiOiJrYXJ0aWtrcjU1NUBnbWFpbC5jb3AiLCJpZCI6NSwiaWF0IjoxNzEyNzYwMDk3LCJleHAiOjE3MTI4NDY0OTd9.uq5qv1QWadgs6O4w4Xj3b_LvNrqeZbIQcY9ja_pdrG8",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:4010/api/user/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "admin-login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4010/api/auth/admin-login"
+			},
+			"response": []
+		},
+		{
+			"name": "adminprofile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcxMjc1NTQzMSwiZXhwIjoxNzEyODQxODMxfQ.N566sUQq40_yJItx146F0XAne7aLro-igPk4Vg_M2uE",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:4010/api/admin/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "user orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcxMjc1NTcwMywiZXhwIjoxNzEyODQyMTAzfQ.wtweVm3HH0CI1kqK4L34YARrZqZglifweeU71p3Bs30",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4010/api/admin/user/1/orders/1"
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIEt1bWFyIFN3YXJua2FyIiwiZW1haWwiOiJrYXJ0aWtrcjU1NUBnbWFpbC5jb3AiLCJpZCI6NSwiaWF0IjoxNzEyNzYwMDk3LCJleHAiOjE3MTI4NDY0OTd9.uq5qv1QWadgs6O4w4Xj3b_LvNrqeZbIQcY9ja_pdrG8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "http://localhost:4010/api/user/order"
+			},
+			"response": []
+		},
+		{
+			"name": "user order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIEt1bWFyIFN3YXJua2FyIiwiZW1haWwiOiJrYXJ0aWtrcjU1NUBnbWFpbC5jb3AiLCJpZCI6NSwiaWF0IjoxNzEyNzYwMDk3LCJleHAiOjE3MTI4NDY0OTd9.uq5qv1QWadgs6O4w4Xj3b_LvNrqeZbIQcY9ja_pdrG8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "http://localhost:4010/api/user/order"
+			},
+			"response": []
+		},
+		{
+			"name": "user order view",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIEt1bWFyIFN3YXJua2FyIiwiZW1haWwiOiJrYXJ0aWtrcjU1NUBnbWFpbC5jb3AiLCJpZCI6NSwiaWF0IjoxNzEyNzYwMDk3LCJleHAiOjE3MTI4NDY0OTd9.uq5qv1QWadgs6O4w4Xj3b_LvNrqeZbIQcY9ja_pdrG8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "http://localhost:4010/api/user/order/14"
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIEt1bWFyIFN3YXJua2FyIiwiZW1haWwiOiJrYXJ0aWtrcjU1NUBnbWFpbC5jb3AiLCJpZCI6NSwiaWF0IjoxNzEyNzYwMDk3LCJleHAiOjE3MTI4NDY0OTd9.uq5qv1QWadgs6O4w4Xj3b_LvNrqeZbIQcY9ja_pdrG8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderArray\" :[\r\n        {\r\n            \"productid\":\"2\",\r\n            \"quantity\":\"1\"\r\n        },\r\n        {\r\n            \"productid\":\"4\",\r\n            \"quantity\":\"1\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4010/api/user/createOrder"
+			},
+			"response": []
+		},
+		{
+			"name": "anaylytics/top-products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcxMjc1NTQzMSwiZXhwIjoxNzEyODQxODMxfQ.N566sUQq40_yJItx146F0XAne7aLro-igPk4Vg_M2uE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4010/api/admin/analytics/top-products?page=2&limit=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4010",
+					"path": [
+						"api",
+						"admin",
+						"analytics",
+						"top-products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "analytics/top-users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcxMjc1NTQzMSwiZXhwIjoxNzEyODQxODMxfQ.N566sUQq40_yJItx146F0XAne7aLro-igPk4Vg_M2uE",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:4010/api/admin/analytics/top-users"
+			},
+			"response": []
+		}
+	]
+}
