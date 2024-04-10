@@ -22,7 +22,18 @@ module.exports = {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         const errMsg = _.pluck(errors.array(), 'msg');
-        return res.status(400).json({ message: errMsg.join(', '), statusCode: 0 });
+        return res.status(400).json({ statusCode: 0, message: errMsg.join(', ')});
+      }
+      next();
+    }
+  ],
+  validateSearch: [
+    body('searchquery').notEmpty().withMessage('Please provide search query').trim(),
+    (req, res, next) => {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        const errMsg = _.pluck(errors.array(), 'msg');
+        return res.status(400).json({statusCode: 0, message: errMsg.join(', ')});
       }
       next();
     }
