@@ -1,12 +1,33 @@
 # Inventory Management API with Analytics
 
+## Controllers
+- **admin.controller.js**
+Contains controller functions related to admin operations.
+- **analytics.controller.js**
+Contains controller functions related to analytics.
+- **auth.controller.js**
+Contains controller functions related to authentication.
+- **orders.controller.js**
+Contains controller functions related to order operations.
+- **product.controller.js**
+Contains controller functions related to product operations.
+- **user.controller.js**
+Contains controller functions related to user operations.
+
+## Middleware
+### auth
+- **requireLogin.js** : Middleware for authentication and authorization of both admin and user routes.
+### validation
+- **productValidation.js** : Contains validation functions for products and orders.
+
+
 ## Routes
 ### admin.js
 - **/profile (GET)** : Requires user login. Retrieves the user profile for the currently logged-in admin.
-- **/user/:id/orders (GET)** : Requires admin login. Retrieves orders associated with a specific user.
-- **/user/:id/orders/:orderid (GET)** : Requires admin login. Retrieves details of a specific order placed by a user.
-- **/analytics/top-products (GET)** : Requires admin login. Retrieves analytics data for top products.
-- **/analytics/top-users (GET)** : Requires user login. Retrieves analytics data for top users.
+- **/user/:id/orders (GET)** : Requires authentication middleware. Retrieves orders associated with a specific user.
+- **/user/:id/orders/:orderid (GET)** : Requires authentication middleware. Retrieves details of a specific order placed by a user.
+- **/analytics/top-products (GET)** : Requires authentication middleware. Retrieves analytics data for top products.
+- **/analytics/top-users (GET)** : Requires authentication middleware. Retrieves analytics data for top users.
 
 ### auth.js
 - **/signup (POST)** : Handles user signup requests.
@@ -18,11 +39,12 @@
 - **/getProduct/:id (GET)** : Retrieves a product by ID.
 - **/insertProduct (POST)** : Inserts a new product.
 - **/search (POST)** : Searches for products based on name or description.
+
 ### user.js
-- **/profile (GET)** : Requires user login. Retrieves the user profile.
-- **/order (GET)** : Requires user login. Retrieves orders associated with the current user.
-- **/order/:id (GET)** : Requires user login. Retrieves details of a specific order placed by the current user.
-- **/createOrder (POST)** : Requires user login. Creates a new order.
+- **/profile (GET)** : Requires authentication middleware. Retrieves the user profile.
+- **/order (GET)** : Requires authentication middleware. Retrieves orders associated with the current user.
+- **/order/:id (GET)** : Requires authentication middleware. Retrieves details of a specific order placed by the current user.
+- **/createOrder (POST)** : Requires authentication middleware. Creates a new order.
 
 ## Services
 ### adminServices.js
